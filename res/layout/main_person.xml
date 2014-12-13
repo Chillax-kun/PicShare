@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp" >
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="2"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="个人图像"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+          
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                   <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#00ffff"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="手机相册"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                    android:layout_marginBottom="5dp" />
+				
+                
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ae5da1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="图片收藏"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                    android:layout_marginBottom="5dp" />
+                    
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="#ae5da1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="图片下载"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+                
+
+            </LinearLayout>
+
+            </TableRow>
+        
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="#ae5da1"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="个人图说"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <!-- <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_weight="1"
+                        android:background="#00ffff"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="唯美"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" /> -->
+                </TableRow>
+
+                <TableRow
+        			android:layout_width="match_parent"
+    				android:layout_height="wrap_content"
+                    android:layout_marginTop="2.5dp"
+    				android:orientation="horizontal" >
+    				
+                    <TextView
+				        android:layout_width="match_parent"
+				    	android:layout_height="70dp"
+				    	android:layout_weight="1"
+				    	android:gravity="center"
+				    	android:text="图片分享"
+				    	android:textColor="#FFFFFF"
+				    	android:textSize="18sp"
+				    	android:background="#ae5da1"
+				    	android:layout_marginRight="2.5dp"
+				    	android:padding="5dp" />
+                    
+                    <TextView
+				        android:layout_width="match_parent"
+				    	android:layout_height="70dp"
+				    	android:layout_weight="1"
+				    	android:gravity="center"
+				    	android:text="个人相集"
+				    	android:textColor="#FFFFFF"
+				    	android:textSize="18sp"
+				    	android:background="#00ffff"
+				    	android:layout_marginLeft="2.5dp"
+				    	android:padding="5dp"  />
+                    
+    			</TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="#aaaaaa"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="定点图说"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </TableRow>
+        
+    </TableLayout>
+
+</ScrollView>

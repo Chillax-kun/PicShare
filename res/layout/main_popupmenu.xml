@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<LinearLayout
+	    android:id="@+id/main_popupmenu_layout"
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:layout_gravity="bottom"
+    	android:gravity="center"
+    	android:background="#F0F0F0"
+    	android:orientation="vertical" >
+	    
+	    <TextView
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="手机相集"
+        android:background="@drawable/menu_item_bg"
+        android:textColor="#00a0e9"
+        android:gravity="center"
+        android:textSize="20sp" />
+	    <TextView
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="拍照"
+        android:background="@drawable/menu_item_bg"
+        android:textColor="#00a0e9"
+        android:gravity="center"
+        android:textSize="20sp" />
+	    <TextView
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text="图片分享"
+        android:background="@drawable/menu_item_bg"
+        android:textColor="#00a0e9"
+        android:gravity="center"
+        android:textSize="20sp" />
+	    <TextView
+	    android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:text=""
+        android:background="@drawable/main_top_bg"
+        android:textColor="#00a0e9"
+        android:gravity="center"
+        android:textSize="20sp" />
+	    
+	</LinearLayout>
+</LinearLayout>

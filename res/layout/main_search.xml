@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical" >
+                
+                <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp" >
+
+                <TableRow
+                    android:id="@+id/searchfragment_searchbar_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#17324D"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="图片搜索"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:visibility="visible" />
+                    
+                </TableRow>
+                
+                <EditText
+                    android:id="@+id/searchfragment_searchbar_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/searchfragment_searchbar_bg"
+                        android:padding="5dp"
+                        android:visibility="gone"
+                        android:hint="请输入关键字搜索" />
+                </FrameLayout>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                    	android:id="@+id/searchfragment_hotword_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:background="#E6B451"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="意象"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="vertical" >
+                        
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="2.5dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                    	android:id="@+id/searchfragment_hotword_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="2.5dp"
+                                android:layout_weight="1"
+                                android:background="#D9742C"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="青春"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp" />
+
+                            <TextView
+                    	android:id="@+id/searchfragment_hotword_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2.5dp"
+                                android:layout_weight="1"
+                                android:background="#994C52"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="唯美"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2.5dp"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                    	android:id="@+id/searchfragment_hotword_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="#ae5da1"
+                                android:gravity="center"
+                                android:padding="5dp"
+                                android:text="青春"
+                                android:textColor="#FFFFFF"
+                                android:textSize="18sp" />
+
+                            <!--
+                         <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_weight="1"
+                        android:background="#00ffff"
+                        android:gravity="center"
+                        android:padding="2dp"
+                        android:text="唯美"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+                            -->
+                        </TableRow>
+
+                        
+                    </TableLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                    	android:id="@+id/searchfragment_hotword_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2.5dp"
+                        android:layout_weight="2"
+                        android:background="#00ffff"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="唯美"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/searchfragment_change_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2.5dp"
+                        android:layout_weight="1"
+                        android:background="#aaaaaa"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="换一换"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <!--
+                 <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2.5dp"
+                android:layout_weight="1"
+                android:background="#ae5da1"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="青春"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+                    -->
+                </TableRow>
+            </TableLayout>
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mytalk_bg" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="暂无任何图说"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>
