@@ -1,4 +1,4 @@
-package com.pictrueshare.base;
+package com.pictureshare.base;
 
 import android.app.Application;
 
