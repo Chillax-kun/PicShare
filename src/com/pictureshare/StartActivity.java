@@ -34,36 +34,38 @@ public class StartActivity extends Activity {
 		
 		startLinear = (LinearLayout) this.findViewById(R.id.start_activity_linear);
 		
-//		mHandler.postDelayed(new Runnable(){
-//
-//			@Override
-//			public void run() {
-//				// TODO Auto-generated method stub
-//				
+		mHandler.postDelayed(new Runnable(){
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				
 //				if(IsNetWork.isNetWorking(getBaseContext())){
 //					String URL = PictureShareURL.PICSHARENAVIGATION;
 //					GetDataThread myThread = new GetDataThread(URL, mHandler);
 //					myThread.start();
 //				}else{
-//					Intent intent = new Intent(StartActivity.this,MainActivity.class);
-//					startActivity(intent);
-//					finish();
+					Intent intent = new Intent(StartActivity.this,MainActivity.class);
+					startActivity(intent);
+					finish();
 //				}
-//				
-//			}
-//		}, 3000);
+				
+			}
+		}, 3000);
 		
-		if(IsNetWork.isNetWorking(this)){
-			String URL = PictureShareURL.PICSHARENAVIGATION;
-			GetDataThread myThread = new GetDataThread(URL, mHandler);
-			myThread.start();
-		}else{
-			Toast.makeText(this, "网络已断开,请重新连接", Toast.LENGTH_SHORT).show();
-			
-			Intent intent = new Intent(StartActivity.this,MainActivity.class);
-			startActivity(intent);
-			finish();
-		}
+		
+		//采用滑动页面开启
+//		if(IsNetWork.isNetWorking(this)){
+//			String URL = PictureShareURL.PICSHARENAVIGATION;
+//			GetDataThread myThread = new GetDataThread(URL, mHandler);
+//			myThread.start();
+//		}else{
+//			Toast.makeText(this, "网络已断开,请重新连接", Toast.LENGTH_SHORT).show();
+//			
+//			Intent intent = new Intent(StartActivity.this,MainActivity.class);
+//			startActivity(intent);
+//			finish();
+//		}
 		
 	}
 

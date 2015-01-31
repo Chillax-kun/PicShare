@@ -4,9 +4,11 @@ import com.pictureshare.R;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.OnKeyListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.PopupWindow;
@@ -37,10 +39,9 @@ public class PopupMenu extends PopupWindow {
 		ColorDrawable dw = new ColorDrawable(0xb0000000);
 		//设置SelectPicPopupWindow弹出窗体的背景
 		this.setBackgroundDrawable(dw);
+		
 		mMenuView.setOnTouchListener(new OnTouchListener() {
-			
 			public boolean onTouch(View v, MotionEvent event) {
-				
 				int height = mMenuView.findViewById(R.id.main_popupmenu_layout).getTop();
 				int y=(int) event.getY();
 				if(event.getAction()==MotionEvent.ACTION_UP){
@@ -51,5 +52,19 @@ public class PopupMenu extends PopupWindow {
 				return true;
 			}
 		});
+		mMenuView.setFocusableInTouchMode(true); 
+		mMenuView.setOnKeyListener(new OnKeyListener() {
+			
+			@Override
+			public boolean onKey(View arg0, int keyCode, KeyEvent arg2) {
+				// TODO Auto-generated method stub
+				if ((keyCode == KeyEvent.KEYCODE_MENU) && isShowing()) {  
+		            dismiss();
+		            return true;  
+		        }  
+		        return false;
+			}
+		});
+		
 	}
 }

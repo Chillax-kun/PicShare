@@ -18,11 +18,14 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
@@ -38,13 +41,14 @@ public class MainActivity extends FragmentActivity {
 	private List<Fragment> mList;
 	private TextView mTextView;
 	private ImageView img;
-	private LinearLayout menu;
+	private LinearLayout menuBtn;
 	private PopupMenu mPopupMenu;
 	
 	private int offset = 0;
 	private int currIndex = 4;
 	private int bmpW;
 	public static final String E = "picShare"; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,7 +61,7 @@ public class MainActivity extends FragmentActivity {
 
 		mViewPager = (ViewPager) mView.findViewById(R.id.main_viewpager);
 		mTextView = (TextView) mView.findViewById(R.id.main_top_title);
-		menu = (LinearLayout) mView.findViewById(R.id.main_top_menu);
+		menuBtn = (LinearLayout) mView.findViewById(R.id.main_top_menu);
 		
 		InitImageView();
 		
@@ -66,7 +70,6 @@ public class MainActivity extends FragmentActivity {
 		mList.add(new SearchFragment());
 		mList.add(new PicShareFragment());
 		
-		
 		mFragmentManager = getSupportFragmentManager();
 		mFragmentManager.popBackStack();
 		
@@ -74,10 +77,7 @@ public class MainActivity extends FragmentActivity {
 		mViewPager.setOnPageChangeListener(new MyPagerChanger());
 		mViewPager.setOffscreenPageLimit(1);
 		
-//		mPopupMenu = new PopupMenu(getBaseContext());
-//		mPopupMenu.showMenu(R.layout.main_popupmenu);
-//		
-		menu.setOnClickListener(click);
+		menuBtn.setOnClickListener(click);
 	}
 	
 	private void InitImageView() {
@@ -97,19 +97,25 @@ public class MainActivity extends FragmentActivity {
 		@Override
 		public void onClick(View view) {
 			// TODO Auto-generated method stub
-			if(mPopupMenu == null){
-				mPopupMenu = new PopupMenu(getBaseContext());
-				mPopupMenu.showMenu(R.layout.main_popupmenu);
-				mPopupMenu.showAtLocation(view, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
-			}else{
-				if(mPopupMenu.isShowing()){
-					mPopupMenu.dismiss();
-				}else{
-					mPopupMenu.showAtLocation(view, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
-				}
-			}
+			createOrShowMenu();
 		}
 	};
+	
+	private void createOrShowMenu(){
+		if(mPopupMenu == null){
+			mPopupMenu = new PopupMenu(getBaseContext());
+			mPopupMenu.showMenu(R.layout.main_popupmenu);
+			mPopupMenu.showAtLocation(menuBtn, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+		}else{
+			if(mPopupMenu.isShowing()){
+				Log.e("Kun", "dismiss");
+				mPopupMenu.dismiss();
+			}else{
+				mPopupMenu.showAtLocation(menuBtn, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+				Log.e("Kun", "show");
+			}
+		}
+	}
 	
 	private class MyFragmentAdapter extends FragmentStatePagerAdapter {
 
@@ -169,7 +175,7 @@ public class MainActivity extends FragmentActivity {
 		}
 	};
 
-	private long waitTime = 5000;  
+	private long waitTime = 2000;  
 	private long touchTime = 0;
 	
 	@Override
@@ -193,17 +199,20 @@ public class MainActivity extends FragmentActivity {
 			}
 			return true;
 		}
-//		else if(event.getAction() == KeyEvent.ACTION_DOWN && KeyEvent.KEYCODE_MENU == keyCode){
-//			if(mPopupMenu != null){
-//				if(mPopupMenu.isShowing()){
-//					mPopupMenu.dismiss();
-//				}else{
-//					mPopupMenu.showAtLocation(menu, Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
-//				}
-//			}
-//		}
-    	
 		return super.onKeyDown(keyCode, event);
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		menu.add("menu");
+		return super.onCreateOptionsMenu(menu);
+	}
 
+	@Override
+	public boolean onMenuOpened(int featureId, Menu menu) {
+		Log.e("Kun", "onMenuOpened");
+		createOrShowMenu();
+	    return false;
+	}
 }
